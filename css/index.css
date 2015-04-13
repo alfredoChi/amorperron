@@ -1,0 +1,1153 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#E4E4E4;
+    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #A7A7A7),
+        color-stop(0.51, #E4E4E4)
+    );
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+
+/* Portrait layout (default) */
+.app {
+    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    position:absolute;             /* position in the center of the screen */
+    left:50%;
+    top:50%;
+    height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+#labelRegistration{
+	color:#FFF;
+	font-family:Verdana, Geneva, sans-serif;
+	text-align:center;
+}
+
+body{
+	background:url(../images/fondo.fw.png);
+}
+
+#emailUSer{
+	height:40px;	
+}
+
+#passwordUser{
+	height:40px;	
+}
+
+#labelRecuerdame{
+	font-size:15px;	
+}
+
+#contectPhoter{
+	top:25%;
+	position:absolute;
+	background:#FFF;
+	height:60%;
+	width:100%;
+	}
+
+#foto{
+	/*background:#FFF;*/
+	background-image:url(../images/images.jpg);
+	background-size:100% 100%;
+	position:absolute;
+	left:10%;
+	top:10%;
+	height:60%;
+	width:80%;	
+}
+
+#datos{
+	position:absolute;
+	top:75%;
+}
+
+#labelAddress{
+	font-size:12px;
+	font-family:Verdana, Geneva, sans-serif;
+}
+
+#labeldog{
+	font-size:12px;
+	font-family:Verdana, Geneva, sans
+	-serif;
+}
+
+/* divicion del login  */
+
+#login, #loginSecion, #registration{
+	position:absolute;
+	height:100%;
+	width:80%;
+	background:#3178C8;
+	left:-3000px;
+}
+
+#divHeader{
+	background:url(../img/logo3.fw.png) no-repeat center;
+	background-size:60% 100%;
+	position:absolute;
+	top:10%;
+	height:20%;
+	width:100%;
+}
+
+#tollBar, #tollBar2{
+	position:absolute;
+	top:0px;
+	left:-60px;
+	height:7%;
+	width:100%;
+}
+
+#divContent{
+	position:absolute;
+	top:50%;
+	width:100%;
+}
+
+#divFooter{
+	position:absolute;
+	bottom:1%;
+	width:100%;
+}
+
+/***** login section *****/
+
+#divContentLogin{
+	position:absolute;
+	top:40%;
+	width:100%;
+}
+
+/***** enviar resultados ***********/
+
+#EviarResultado{
+	position:absolute;
+	height:100%;
+	width:80%;
+	background:#3178C8;
+	left:-3000px;
+	z-index:2;
+}
+
+#divHeaderResultados{
+	color:#FFF;
+	font-family:Arial, Helvetica, sans-serif;
+	text-align:center;
+	position:absolute;
+	top:10%;
+	width:100%;
+}
+
+/******* chechboc ********/
+
+#divCheckbox{
+	float:left;	
+}
+
+#divChechboxSeparador{
+	width:100%;
+}
+
+/********* home *********/
+
+#home{
+	position:absolute;
+	height:100%;
+	width:100%;
+	left:-3000px;
+	z-index:1;
+}
+
+#divWrapperContent{
+}
+
+.divWrapperHeader{
+}
+
+.divWrapperImage{
+}
+
+.divWrapperFooter{
+}
+
+#divHeaderHome{
+	background:url(../img/logo3.fw.png) no-repeat center;
+	background-size:30% 100%;
+	position:absolute;
+	top:1%;
+	height:12%;
+	width:100%;
+}
+
+#divFooterHome{
+	position:absolute;
+	bottom:1px;	
+	width:100%;
+	height:10%;	
+	z-index:0;
+}
+
+#divWrapperHeader{
+	width:100%;
+	z-index:1;
+}
+
+.divWrapperHeaderCenter{
+	width:100%;	
+}
+
+#divWrapperImage{
+	width:100%;
+}
+
+#imageDogs{
+	height:100%;
+}
+
+#divWrapperImageLeft{
+	position:relative;
+	width:10%;
+	float:left;
+}
+
+#divWrapperImageCenter{
+	position:relative;
+	float:left;	
+	width:80%;
+}
+
+#divWrapperFooter{
+	width:100%;
+	height:100%;
+}
+
+#divWrapperFooterLeft{
+	position:relative;
+	width:10%;
+	float:left;
+}
+
+#divWrapperFooterContent{
+	position:relative;
+	float:left;
+	width:80%;
+}
+
+.divWrapperWhite{
+	width:100%;
+}
+
+.divWrapperWhiteContent{
+	width:100%;
+}
+
+#dividirFooterHome{
+	position:absolute;
+	top:10%;
+	left:33%;
+	height:80%;
+	width:2px;
+	background:#FFF;
+	border-radius:50px;	
+}
+
+#iconPicture{
+	position:absolute;
+	bottom:2%;
+	left:45%;
+	height:80%;
+	width:15%;
+	background:url(../images/photo.fw.png) no-repeat;
+	background-size:80% 70%;
+}
+
+#dividirFooterHome2{
+	position:absolute;
+	top:10%;
+	left:68%;
+	height:80%;
+	width:2px;
+	background:#FFF;
+	border-radius:50px;	
+}
+
+#iconHome{
+	display:none;
+	position:absolute;
+	bottom:2%;
+	left:12%;
+	height:80%;
+	width:15%;
+	background:url(../images/home.fw.png) no-repeat;
+	background-size:80% 70%;	
+}
+
+#iconLoupe{
+	position:absolute;
+	bottom:2%;
+	left:12%;
+	height:80%;
+	width:15%;
+	background:url(../images/loupe.fw.png) no-repeat;
+	background-size:80% 70%;
+}
+
+#iconExitSection{
+	position:absolute;
+	bottom:2px;
+	left:78%;
+	height:80%;
+	width:15%;
+	background:url(../images/signOff.fw.png) no-repeat;
+	background-size:70% 70%;
+}
+
+/******** input **************/
+
+.txtCampos{
+	width: 100%;
+	-webkit-appearance: none;
+	padding: 0 15px;
+	margin-bottom: 15px;
+	line-height: 21px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	outline: 0;	
+	font-family: "Helvetica Neue",Helvetica,sans-serif;
+	font-size: 20px;
+	color:#000;
+}
+
+.btnCampos{
+	display: block;
+	width: 100%;
+	padding: 15px 0;
+	margin-bottom: 10px;
+	font-size: 18px;
+	color: #fff;
+	background-color: #428bca;
+	border: 1px solid #428bca;
+}
+
+.btnCamposHover{
+	display: block;
+	width: 100%;
+	padding: 15px 0;
+	margin-bottom: 10px;
+	font-size: 18px;
+	color: #fff;
+	background-color: #234E74;
+	border: 1px solid #428bca;
+}
+
+#cargando{
+	position:absolute;
+	top:40%;
+	text-align:center;
+	height:100%;
+	width:100%;
+}
+
+/******* scroll ************/
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	-ms-touch-action: none;
+}
+
+body,ul,li {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+body {
+	font-size: 12px;
+	font-family: ubuntu, helvetica, arial;
+	overflow: hidden; /* this is important to prevent the whole page to bounce */
+}
+
+#wrapper {
+	position: absolute;
+	z-index: 1;
+	top: 15%;
+	bottom: 48px;
+	left: 0;
+	width: 100%;
+	background:#FFF;
+	overflow: hidden;
+	height:75%;
+}
+
+#scroller {
+	position: absolute;
+	z-index: 1;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	width: 100%;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+#scroller #divScrooll{
+	width:100%;	
+	height:100%;
+}
+
+#pullDown, #pullUp {
+	background:#fff;
+	height:40px;
+	line-height:40px;
+	padding:5px 10px;
+	font-weight:bold;
+	font-size:14px;
+	color:#888
+}
+
+#pullDown .pullDownIcon, #pullUp .pullUpIcon  {
+	display:block; float:left;
+	width:40px; height:40px;
+	background:url(../images/pull-icon@2x.png) 0 0 no-repeat;
+	-webkit-background-size:40px 80px; background-size:40px 80px;
+	-webkit-transition-property:-webkit-transform;
+	-webkit-transition-duration:250ms
+}
+
+#pullDown .pullDownIcon {
+	-webkit-transform:rotate(0deg) translateZ(0);
+}
+
+#pullUp .pullUpIcon  {
+	-webkit-transform:rotate(-180deg) translateZ(0);
+}
+
+#pullDown.flip .pullDownIcon {
+	-webkit-transform:rotate(-180deg) translateZ(0);
+}
+
+#pullUp.flip .pullUpIcon {
+	-webkit-transform:rotate(0deg) translateZ(0);
+}
+
+#pullDown.loading .pullDownIcon, #pullUp.loading .pullUpIcon {
+	background-position:0 100%;
+	-webkit-transform:rotate(0deg) translateZ(0);
+	-webkit-transition-duration:0ms;
+	-webkit-animation-name:loading;
+	-webkit-animation-duration:2s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:linear
+}
+
+
+#scroller ul {
+	width: 100%;
+}
+
+#scroller li {
+	height:100%;
+}
+
+/********responsin *******/
+
+@media screen and (max-height: 340px){
+	/*#divWrapperImage{
+		height:200px;
+	}
+	
+	#divWrapperFooter{
+		height:68px;
+	}*/
+	
+	.labelImage{
+		font-size:8px;
+		font-family:Georgia, "Times New Roman", Times, serif;
+	}
+	
+	.labelImageNombre{
+		font-size:12px;
+		font-family:Georgia, "Times New Roman", Times, serif;
+		font-weight:bold;	
+	}
+	
+	#labelRegistration{
+		font-size:8px;
+	}
+	
+	.txtCampos{
+		font-size: 15px;
+	}
+	
+	
+	input[type="checkbox"] {
+		background:#000;
+		height:20px;
+		width:20px;
+	}
+	
+	.btnCampos, .btnCamposHover{
+	width: 100%;
+	padding: 10px 0;
+	margin-bottom: 5px;
+	font-size: 14px;
+	}
+	
+	#divHeader{
+		top:8%;
+		height:20%;
+		width:100%;
+	}
+	
+	#divContentLogin{
+		top:30%;
+	}
+	
+	#labelRecuerdame{
+		color:#FFF;
+		font-size:12px;
+		font-family:Arial, Helvetica, sans-serif;
+	}
+	
+	#divChechboxSeparador{
+		height:10px;
+	}
+	
+	#pullDown .pullDownIcon, #pullUp .pullUpIcon  {
+	width:20px; height:10px;
+	-webkit-background-size:20px 20px; background-size:20px 20px;
+	}
+	
+	#pullDown, #pullUp {
+		background:#fff;
+		height:20px;
+		line-height:20px;
+		padding:2px 5px;
+		font-weight:bold;
+		font-size:10px;
+		color:#888
+	}
+	
+	#labelEnviarResultado{
+		font-size:14px;
+		font:Georgia, "Times New Roman", Times, serif;
+	}
+	
+}
+
+@media screen and (max-height: 540px) and (min-height:341px){
+	/*#divWrapperImage{
+		height:200px;
+	}
+	
+	#divWrapperFooter{
+		height:68px;
+	}*/
+	
+	.labelImage{
+		font-size:14px;
+		font-family:Georgia, "Times New Roman", Times, serif;
+	}
+	
+	.labelImageNombre{
+		font-size:18px;
+		font-family:Georgia, "Times New Roman", Times, serif;
+		font-weight:bold;	
+	}
+	
+	#labelRegistration{
+		font-size:14px;
+	}
+	
+	.txtCampos{
+		height: 40px;
+		font-size: 18px;
+	}
+	
+	
+	input[type="checkbox"] {
+		background:#000;
+		height:30px;
+		width:30px;
+	}
+	
+	#labelRecuerdame{
+		color:#FFF;
+		font-size:20px;
+		font-family:Arial, Helvetica, sans-serif;
+	}
+	
+	#divChechboxSeparador{
+		height:10px;
+	}
+	
+	#pullDown .pullDownIcon, #pullUp .pullUpIcon  {
+	width:25px; height:25px;
+	-webkit-background-size:25px 50px; background-size:25px 50px;
+	}
+	
+	#pullDown, #pullUp {
+		background:#fff;
+		height:20px;
+		line-height:20px;
+		padding:2px 5px;
+		font-weight:bold;
+		font-size:12px;
+		color:#888
+	}
+	
+	#labelEnviarResultado{
+		font-size:18px;
+		font:Georgia, "Times New Roman", Times, serif;
+	}
+	
+}
+
+@media screen and (max-height: 660px) and (min-height:541px) {
+	/*#divWrapperImage{
+		height:280px;
+	}
+	
+	#divWrapperFooter{
+		height:84px;
+	}*/
+	
+	.labelImage{
+		font-size:19px;
+		font-family:Georgia, "Times New Roman", Times, serif;
+	}
+	
+	.labelImageNombre{
+		font-size:23px;
+		font-family:Georgia, "Times New Roman", Times, serif;
+		font-weight:bold;	
+	}
+	
+	#labelRegistration{
+		font-size:19px;
+	}
+	
+	.txtCampos{
+		height: 45px;
+	}
+	
+	input[type="checkbox"] {
+		height:30px;
+		width:30px;
+	}
+	
+	#labelRecuerdame{
+		color:#FFF;
+		font-size:22px;
+		font-family:Arial, Helvetica, sans-serif;
+	}
+	
+	#divChechboxSeparador{
+		height:20px;
+	}
+	
+	#pullDown .pullDownIcon, #pullUp .pullUpIcon  {
+	width:30px; height:30px;
+	-webkit-background-size:30px 60px; background-size:30px 60px;
+	}
+	
+	#pullDown, #pullUp {
+		background:#fff;
+		height:20px;
+		line-height:20px;
+		padding:2px 5px;
+		font-weight:bold;
+		font-size:13px;
+		color:#888
+	}
+	
+	#labelEnviarResultado{
+		font-size:22px;
+		font:Georgia, "Times New Roman", Times, serif;
+	}
+	
+}
+
+@media screen and (max-height: 860px) and (min-height:661px) {
+	/*#divWrapperImage{
+		height:350px;
+	}
+	
+	#divWrapperFooter{
+		height:111px;
+	}*/
+	
+	.labelImage{
+		font-size:22px;
+		font-family:Georgia, "Times New Roman", Times, serif;
+	}
+	
+	.labelImageNombre{
+		font-size:26px;
+		font-family:Georgia, "Times New Roman", Times, serif;
+		font-weight:bold;	
+	}
+	
+	#labelRegistration{
+		font-size:22px;
+	}
+	
+	.txtCampos{
+		height: 50px;
+		font-size:22px;
+	}
+	
+	input[type="checkbox"] {
+		height:35px;
+		width:35px;
+	}
+	
+	#labelRecuerdame{
+		color:#FFF;
+		font-size:25px;
+		font-family:Arial, Helvetica, sans-serif;
+	}
+	
+	#divChechboxSeparador{
+		height:25px;
+	}
+	
+	.btnCampos, .btnCamposHover{
+		font-size: 28px;
+	}
+	
+	#labelEnviarResultado{
+		font-size:28px;
+		font:Georgia, "Times New Roman", Times, serif;
+	}
+	
+}
+
+@media screen and (max-height: 970px) and (min-height:861px) {
+	
+	.labelImage{
+		font-size:26px;
+		font-family:Georgia, "Times New Roman", Times, serif;
+	}
+	
+	.labelImageNombre{
+		font-size:30px;
+		font-family:Georgia, "Times New Roman", Times, serif;
+		font-weight:bold;	
+	}
+	
+	#labelRegistration{
+		font-size:26px;
+	}
+	
+	input[type="checkbox"] {
+		height:50px;
+		width:50px;
+	}
+	
+	#labelRecuerdame{
+		color:#FFF;
+		font-size:32px;
+		font-family:Arial, Helvetica, sans-serif;
+	}
+	
+	#divChechboxSeparador{
+		height:35px;
+	}
+	
+	.txtCampos{
+		height: 60px;
+		font-size:32px;
+	}
+	
+	.btnCampos, .btnCamposHover{
+		font-size: 32px;
+	}
+	
+	#pullDown .pullDownIcon, #pullUp .pullUpIcon  {
+	width:50px; height:50px;
+	-webkit-background-size:50px 100px; background-size:50px 100px;
+	}
+	
+	#pullDown, #pullUp {
+		background:#fff;
+		height:50px;
+		line-height:50px;
+		padding:2px 5px;
+		font-weight:bold;
+		font-size:16px;
+		color:#888
+	}
+	
+	.app {
+    	background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+  		background-size:250px 250px;
+    	height:250px;                   /* text area height */
+    	width:250px;                   /* text area width */
+		padding:230px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    	margin:-115px 0px 0px -150px; 
+	}
+	
+	.event {
+    	font-size:18px;
+	}
+	
+	#labelEnviarResultado{
+		font-size:32px;
+		font:Georgia, "Times New Roman", Times, serif;
+	}
+	
+}
+
+@media screen and (max-height: 1044px) and (min-height:971px) {
+	
+	.labelImage{
+		font-size:30px;
+		font-family:Georgia, "Times New Roman", Times, serif;
+	}
+	
+	.labelImageNombre{
+		font-size:35px;
+		font-family:Georgia, "Times New Roman", Times, serif;
+		font-weight:bold;	
+	}
+	
+	#labelRegistration{
+		font-size:30px;
+	}
+	
+	.txtCampos{
+		height: 80px;
+		font-size:35px;
+	}
+	
+	input[type="checkbox"] {
+		height:60px;
+		width:60px;
+	}
+	
+	#labelRecuerdame{
+		color:#FFF;
+		font-size:46px;
+		font-family:Arial, Helvetica, sans-serif;
+	}
+	
+	#divChechboxSeparador{
+		height:50px;
+	}
+	
+	.btnCampos, .btnCamposHover{
+		font-size: 36px;
+	}
+	
+	#pullDown .pullDownIcon, #pullUp .pullUpIcon  {
+	width:60px; height:60px;
+	-webkit-background-size:60px 120px; background-size:60px 120px;
+	}
+	
+	#pullDown, #pullUp {
+		background:#fff;
+		height:60px;
+		line-height:60px;
+		padding:2px 5px;
+		font-weight:bold;
+		font-size:18px;
+		color:#888
+	}
+	
+	.app {
+    	background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+  		background-size:300px 300px;
+    	height:300px;                   /* text area height */
+    	width:300px;                   /* text area width */
+		padding:300px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    	margin:-115px 0px 0px -200px; 
+	}
+	
+	.event {
+    	font-size:25px;
+	}
+	
+	#labelEnviarResultado{
+		font-size:38px;
+		font:Georgia, "Times New Roman", Times, serif;
+	}
+	
+} 
+
+@media screen and (max-height: 1300px) and (min-height:1045px) {
+	
+	#labelRegistration{
+		font-size:34px;
+	}
+	
+	.labelImage{
+		font-size:34px;
+		font-family:Georgia, "Times New Roman", Times, serif;
+	}
+	
+	.labelImageNombre{
+		font-size:38px;
+		font-family:Georgia, "Times New Roman", Times, serif;
+		font-weight:bold;	
+	}
+	
+	.txtCampos{
+		height: 90px;
+		font-size:28px;
+	}
+	
+	input[type="checkbox"] {
+		height:70px;
+		width:70px;
+	}
+	
+	#labelRecuerdame{
+		color:#FFF;
+		font-size:52px;
+		font-family:Arial, Helvetica, sans-serif;
+	}
+	
+	#divChechboxSeparador{
+		height:50px;
+	}
+	
+	.btnCampos, .btnCamposHover{
+		font-size: 52px;
+	}
+	
+	#pullDown .pullDownIcon, #pullUp .pullUpIcon  {
+	width:70px; height:70px;
+	-webkit-background-size:70px 140px; background-size:70px 140px;
+	}
+	
+	#pullDown, #pullUp {
+		background:#fff;
+		height:70px;
+		line-height:70px;
+		padding:2px 5px;
+		font-weight:bold;
+		font-size:30px;
+		color:#888
+	}
+	
+	.app {
+    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+  	background-size:400px 400px;
+    height:400px;                   /* text area height */
+    width:400px;                   /* text area width */
+	padding:350px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-300px 0px 0px -200px; 
+	}
+	
+	.event {
+    	font-size:35px;
+	}
+	
+	#labelEnviarResultado{
+		font-size:45px;
+		font:Georgia, "Times New Roman", Times, serif;
+	}
+} 
+
+@media screen and (max-height: 1940px) and (min-height:1301px) {
+	/*#divWrapperImage{
+		height:950px;
+	}
+	
+	#divWrapperFooter{
+		height:182px;
+	}*/
+	
+	.labelImage{
+		font-size:40px;
+		font-family:Georgia, "Times New Roman", Times, serif;
+	}
+	
+	.labelImageNombre{
+		font-size:45px;
+		font-family:Georgia, "Times New Roman", Times, serif;
+		font-weight:bold;	
+	}
+	
+	#labelRegistration{
+		font-size:40px;
+	}
+	
+	.txtCampos{
+		height: 120px;
+		font-size:35px;
+	}
+	
+	input[type="checkbox"] {
+		height:90px;
+		width:90px;
+	}
+	
+	#labelRecuerdame{
+		color:#FFF;
+		font-size:64px;
+		font-family:Arial, Helvetica, sans-serif;
+	}
+	
+	#divChechboxSeparador{
+		height:70px;
+	}
+	
+	.btnCampos, .btnCamposHover{
+		font-size: 80px;
+	}
+	
+	#pullDown .pullDownIcon, #pullUp .pullUpIcon  {
+	width:100px; height:100px;
+	-webkit-background-size:100px 200px; background-size:100px 200px;
+	}
+	
+	#pullDown, #pullUp {
+		background:#fff;
+		height:90px;
+		line-height:90px;
+		padding:2px 5px;
+		font-weight:bold;
+		font-size:35px;
+		color:#888
+	}
+	
+	.app {
+    	background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+  		background-size:500px 500px;
+    	height:500px;                   /* text area height */
+    	width:500px;                   /* text area width */
+		padding:450px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    	margin:-300px 0px 0px -250px; 
+	}
+	
+	.event {
+    	font-size:40px;
+	}
+	
+	#labelEnviarResultado{
+		font-size:52px;
+		font:Georgia, "Times New Roman", Times, serif;
+	}
+}
+
+#tableParent{
+	display:table;
+}
+
+#tableChild{
+	display: table-cell;
+	vertical-align: middle;
+}

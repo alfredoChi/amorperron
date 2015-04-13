@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+       
+        <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+        <script src="js/iscroll.js" type="text/javascript"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+        <script type="text/javascript" src="js/GAPlugin.js"></script>
+        <title>Amor Perron</title>
+    </head>
+    <body style="background:#3178C8;">
+    
+    <div id="cargando" style="text-align:center; width:100%; display:none;">
+           <img src="img/ajax-loader.gif" height="10%" width="15%"/><br><br><br>
+
+           <p id="labelRegistration">Cargando porfavor espere...</p>
+    </div>
+    
+		<div class="app">
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+        </div>
+        
+       	<div id="login" class="activePage">
+        	
+            <div id="divHeader">
+            </div>
+            <div id="divContent" style="text-align:center;">
+            	<!---<a ontouchend="loginIn();"><img src="images/login.fw.png" width="80%" height="7%"></a>-->
+                
+                <a id="btnLoginFacebook" onclick="login()"><img src="images/loginF.fw.png" width="80%" height="7%"></a>
+                <br><br><br>
+               <a id="btnLoginNormal"><img src="images/login.fw.png" width="80%" height="7%"></a>
+               <br><br>
+			<!--<button onClick="signOut()">Cambiar de usuario</button>-->
+            </div>
+            
+            <div id="divFooter">
+            	<a onclick="RegistrarUsuario();"><p id="labelRegistration">
+                	¿Aún no tienes cuenta?</p></a>
+            </div>
+       		
+		</div>
+        
+        
+        
+        <div id="loginSecion">
+        	
+            <div id="tollBar">
+            <a id="btnLoginAgo"><img src="images/arrow.png" width="15%" height="100%"></a>
+        	</div>
+            
+            <div id="divHeader">
+            	
+            
+            </div>
+            <div id="divContentLogin">
+            	<input type="email" id="txtEmailLogin" class="txtCampos" placeholder="Email" />
+                <input type="password" id="txtPasswordLogin" class="txtCampos" placeholder="Contraseña" />
+
+                
+                	<div id="divCheckbox">
+                    	<input type="checkbox" id="recuerdame">
+                    </div>
+                    	<p id="labelRecuerdame">
+      						&nbsp;Recuérdame
+    					<p>
+                    <div id="divChechboxSeparador"></div>
+                <button class ="btnCampos" id="btnLongIn">Iniciar Sesión</button>
+                <div id="cargandologinSecion" style="text-align:center; width:100%; display:none;">
+            		<img src="img/ajax-loader.gif" height="15%" width="20%"/>
+            	</div>
+            </div>
+            
+            <div id="divFooter">
+            	<a onclick="RegistrarUsuario();"><p id="labelRegistration">
+                	¿Aún no tienes cuenta?</p></a>
+            </div>
+                   		
+		</div>
+        
+        <div id="registration">
+        
+        	<div id="tollBar">
+            	<a id="btnAddUserAgo"><img src="images/arrow.png" width="15%" height="100%"></a>
+       		</div>
+            
+            <div id="divHeader">
+            </div>
+            <div id="divContentLogin">
+            	<input type="text" id="txtUser" class="txtCampos" placeholder="usuario" />
+                <input type="email" id="txtEmail" class="txtCampos" placeholder="email" />
+                <input type="password" id="txtPassword" class="txtCampos" placeholder="contraseña" />
+                <input type="password" id="txtPassword2" class="txtCampos" placeholder="repita contraseña" />
+                <button  id="btnAddUser" class="btnCampos">
+                Registrarme</button>
+                <div id="cargandoRegistration" style="text-align:center; display:none;">
+            	<img src="img/ajax-loader.gif" height="15%" width="20%"/>
+            	</div>
+            </div>
+		</div>
+        
+        <div id="EviarResultado">
+        	
+            <div id="divHeaderResultados">
+            <p id="labelEnviarResultado">Agradecemos tu colaboración con toda la comunidad de amor perrón</p>
+            <hr/>
+            <h1 id="placeDog"></h1>
+            <div id="cargandoGeolocalizacion" style="display:none;">
+            	<img src="img/ajax-loader.gif" height="10%" width="10%"/>
+            </div>
+            <div id="divChechboxSeparador"></div>
+             <input type="text" id="txtDogName" class="txtCampos" placeholder="nombre del perro" />
+             <button  id="btnPublicar" class="btnCampos" ontouchend="cambiarFoto();">Publicar</button>
+            <div id="cargandoEviarResultado" style="display:none">
+            	<img src="img/ajax-loader.gif" height="15%" width="20%"/><br><br>
+                <p class="labelImage">Guardado foto...</p>
+            </div>
+            </div>
+		</div>
+       
+        <div id="home">
+        
+        <input type="hidden" id="idUser" /> 
+        <div id="divHeaderHome" ></div>
+		<div id="wrapper" >
+				
+			<div id="scroller">
+            
+            	<div class="divWrapperWhite">
+                </div>
+				
+            	<div id="divWrapperContent">
+                    
+                </div>
+                
+				<div id="pullUp">
+					<span class="pullUpIcon"></span><span class="pullUpLabel">Arrastra hacia arriba...</span>
+				</div>
+			</div>
+        		
+		</div>
+        
+        <div id="divFooterHome">
+            <div id="iconHome"></div>
+            <div id="iconLoupe"></div>
+            <div id="dividirFooterHome"></div>
+            <div id="iconExitSection"></div>
+            <div id="iconPicture"></div>
+            <div id="dividirFooterHome2"></div>
+            <div id="iconExitSection"></div>
+        </div>    	
+	</div>
+    
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <!--<script src="facebook/openfb.js"></script>-->
+        <script type="text/javascript" src="js/facebookConnectPlugin.js"></script>
+        
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+        
+        <script>
+	
+	var login = function () {
+		if (!window.cordova) {
+			var appId = prompt("Enter FB Application ID", "");
+			facebookConnectPlugin.browserInit(appId);
+		}
+		facebookConnectPlugin.login( ["email"],
+		function (response) {
+			$('#login').css("left","-" + anchoPantalla + "px");
+			insertarUsuariosFace();
+			},
+		function (response) { alert("Error al conectarse al facebook, intentelo mas tarde") });
+    }
+
+</script>
+    </body>
+</html>
